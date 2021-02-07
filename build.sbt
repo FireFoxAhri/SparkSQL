@@ -1,19 +1,25 @@
-name := "Spark"
+name := "SparkSQL"
 
 version := "0.1"
 
-scalaVersion := "2.12.12"
+scalaVersion := "2.13.4"
 
-val sparkVersion = "3.0.1"
+val sparkVersion = "3.2.0-SNAPSHOT"
 val hadoopVersion = "3.3.0"
 
+resolvers += "Apache Snapshots" at "https://repository.apache.org/content/repositories/snapshots"
+
 libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-sql" % sparkVersion,
-  "org.apache.spark" %% "spark-graphx" % sparkVersion,
-  "org.apache.spark" %% "spark-mllib" % sparkVersion,
-  "org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkVersion,
   "org.apache.hadoop" % "hadoop-client" % hadoopVersion,
+  "org.apache.hadoop" % "hadoop-client-api" % hadoopVersion,
+  "org.apache.hadoop" % "hadoop-client-runtime" % hadoopVersion,
   "org.apache.hadoop" % "hadoop-hdfs" % hadoopVersion,
+
+  "org.apache.spark" %% "spark-sql" % sparkVersion changing(),
+  "org.apache.spark" %% "spark-hive" % sparkVersion changing(),
+  "org.apache.spark" %% "spark-graphx" % sparkVersion changing(),
+  "org.apache.spark" %% "spark-mllib" % sparkVersion changing(),
+  "org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkVersion changing(),
 
   "org.apache.kafka" % "kafka-clients" % "2.7.0",
   "org.scalanlp" %% "breeze" % "1.1",
