@@ -2,7 +2,7 @@ name := "SparkSQL"
 
 version := "0.1"
 
-scalaVersion := "2.13.4"
+scalaVersion := "2.13.5"
 
 val sparkVersion = "3.2.0-SNAPSHOT"
 val hadoopVersion = "3.3.0"
@@ -21,7 +21,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-mllib" % sparkVersion changing(),
   "org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkVersion changing(),
 
-  "org.apache.kafka" % "kafka-clients" % "2.7.0",
+  "org.apache.kafka" % "kafka-clients" % "2.8.0",
   "org.scalanlp" %% "breeze" % "1.1",
-  "com.github.scopt" %% "scopt" % "4.0.0"
+  "com.github.scopt" %% "scopt" % "4.0.1"
 )
