@@ -2,7 +2,7 @@ name := "SparkSQL"
 
 version := "0.1"
 
-scalaVersion := "2.13.5"
+scalaVersion := "2.13.6"
 
 val sparkVersion = "3.2.0-SNAPSHOT"
 val hadoopVersion = "3.3.0"
