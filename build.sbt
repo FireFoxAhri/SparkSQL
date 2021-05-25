@@ -16,6 +16,7 @@ libraryDependencies ++= Seq(
   "org.apache.hadoop" % "hadoop-hdfs" % hadoopVersion,
 
   "org.apache.spark" %% "spark-sql" % sparkVersion changing(),
+  "org.apache.spark" %% "spark-yarn" % sparkVersion changing(),
   "org.apache.spark" %% "spark-hive" % sparkVersion changing(),
   "org.apache.spark" %% "spark-graphx" % sparkVersion changing(),
   "org.apache.spark" %% "spark-mllib" % sparkVersion changing(),

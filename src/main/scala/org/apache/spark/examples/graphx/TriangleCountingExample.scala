@@ -19,7 +19,8 @@
 package org.apache.spark.examples.graphx
 
 // $example on$
-import org.apache.spark.graphx.{GraphLoader, PartitionStrategy}
+
+import org.apache.spark.graphx.{Graph, GraphLoader, PartitionStrategy, VertexRDD}
 // $example off$
 import org.apache.spark.sql.SparkSession
 
@@ -44,15 +45,17 @@ object TriangleCountingExample {
     val spark = SparkSession
       .builder
       .appName(s"${this.getClass.getSimpleName}")
+      .master("local[*]")
       .getOrCreate()
     val sc = spark.sparkContext
 
     // $example on$
     // Load the edges in canonical order and partition the graph for triangle count
-    val graph = GraphLoader.edgeListFile(sc, "data/graphx/followers.txt", true)
+    val graph: Graph[Int, Int] = GraphLoader.edgeListFile(sc, "data/graphx/followers.txt", true)
       .partitionBy(PartitionStrategy.RandomVertexCut)
     // Find the triangle count for each vertex
-    val triCounts = graph.triangleCount().vertices
+    val test: Graph[Int, Int] = graph.triangleCount()
+    val triCounts: VertexRDD[Int] = graph.triangleCount().vertices
     // Join the triangle counts with the usernames
     val users = sc.textFile("data/graphx/users.txt").map { line =>
       val fields = line.split(",")
@@ -67,4 +70,5 @@ object TriangleCountingExample {
     spark.stop()
   }
 }
+
 // scalastyle:on println
