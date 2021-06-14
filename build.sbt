@@ -23,6 +23,6 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-streaming-kafka-0-10" % sparkVersion changing(),
 
   "org.apache.kafka" % "kafka-clients" % "2.8.0",
-  "org.scalanlp" %% "breeze" % "1.1",
+  "org.scalanlp" %% "breeze" % "1.2",
   "com.github.scopt" %% "scopt" % "4.0.1"
 )
