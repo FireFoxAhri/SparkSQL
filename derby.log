@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Jun 24 18:48:02 CST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0181-9553-6eb1-000012dc7600 
+on database directory /Users/user/IdeaProjects/SparkSQL/metastore_db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@7c53a9eb 
+Loaded from file:/Users/user/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Azul Systems, Inc.
+java.runtime.version=11.0.15+10-LTS
+user.dir=/Users/user/IdeaProjects/SparkSQL
+os.name=Mac OS X
+os.arch=aarch64
+os.version=12.4
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
